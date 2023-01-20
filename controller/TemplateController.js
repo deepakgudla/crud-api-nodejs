@@ -43,20 +43,17 @@ const templateid = async(req,res) => {
 //updating template/:id
 
 const updateid = async(req, res) => {
-
     try {
-        const template_name = req.body.template_name;
-        const subject = req.body.subject;
-        const body = req.body.body
-
-        const result = await templatemodel.findByIdAndUpdate(template_name, subject, body)
+        const {template_name, subject, body} = req.body;
+        const id = req.params.id;
+    
+        const result = await templatemodel.findByIdAndUpdate(id, {template_name, subject, body}, {new: true})
         res.send(result)
     }
     catch (error) {
         res.status(500).json({message: "something went wrong"});
     }
-   
-};
+    };
 
 //deleting template
 const deleteid = async(req, res) => {
