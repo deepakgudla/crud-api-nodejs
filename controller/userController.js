@@ -25,7 +25,6 @@ const register = async (req, res) => {
     catch(error) {
         console.log(error);
         res.status(500).json({message: "something went wrong"})
-
     }
 };
 
@@ -51,4 +50,3 @@ const login = async (req, res) => {
 };
 
 module.exports = { register, login };
-
