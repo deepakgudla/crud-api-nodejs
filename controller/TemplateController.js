@@ -5,8 +5,7 @@ const template = async(req, res) => {
     const Template = new templatemodel ({
         template_name: req.body.template_name,
         subject: req.body.subject,
-        body: req.body.body
-    
+        body: req.body.body    
     })
 
     try {
@@ -42,7 +41,6 @@ const templateid = async(req,res) => {
 };
 
 //updating template/:id
-
 const updateid = async(req, res) => {
     try {
         const {template_name, subject, body} = req.body;
@@ -56,7 +54,7 @@ const updateid = async(req, res) => {
     catch (error) {
         res.status(500).json({message: "something went wrong"});
     }
-    };
+ };
 
 //deleting template
 const deleteid = async(req, res) => {
@@ -71,43 +69,6 @@ const deleteid = async(req, res) => {
     catch (error) {
         res.status(400).json({message: "something went wrong"})
     }
-
 }
 
 module.exports = { template, templateAll, templateid, updateid, deleteid };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
