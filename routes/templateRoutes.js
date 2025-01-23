@@ -1,9 +1,8 @@
 const express = require("express");
 const { template, templateAll, templateid, updateid, deleteid } = require("../controller/TemplateController");
 
-
-
 const templateRouter = express();
+
 templateRouter.post("/template", template)
 templateRouter.get("/template", templateAll)
 templateRouter.get("/template/:id", templateid)
